@@ -94,7 +94,7 @@ CREATE TABLE `posts` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `userid_idx` (`userId`),
   CONSTRAINT `userid` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +103,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (1,'hello form kir',NULL,1,NULL),(2,'hey how ar3 you',NULL,2,NULL),(3,'namsste ',NULL,2,NULL),(4,'hey noooo',NULL,3,NULL),(7,'from insomnia dossthi',NULL,2,'2023-06-27 23:28:00'),(8,'hello how are you ','',2,'2023-06-27 23:44:51'),(9,'hey man it \'s nothing','',3,'2023-06-27 23:45:48'),(10,'',NULL,3,'2023-06-28 14:56:25'),(11,'hello img','',3,'2023-06-28 15:08:47'),(12,'',NULL,3,'2023-06-28 15:11:15'),(13,'hellko kir','1687949694164155492.jpg',3,'2023-06-28 16:24:54'),(14,'','1687949764521blank_profile.png',3,'2023-06-28 16:26:04'),(15,'','1687949767818blank_profile.png',3,'2023-06-28 16:26:07'),(16,'hello img','1687949781966blank_profile.png',3,'2023-06-28 16:26:22'),(17,'hello kir new ','1687950241963spiaggia di li cossi,.jpeg',3,'2023-06-28 16:34:02');
+INSERT INTO `posts` VALUES (1,'hello form kir',NULL,1,NULL),(2,'hey how ar3 you',NULL,2,NULL),(3,'namsste ',NULL,2,NULL),(4,'hey noooo',NULL,3,NULL),(7,'from insomnia dossthi',NULL,2,'2023-06-27 23:28:00'),(8,'hello how are you ','',2,'2023-06-27 23:44:51'),(9,'hey man it \'s nothing','',3,'2023-06-27 23:45:48'),(10,'',NULL,3,'2023-06-28 14:56:25'),(11,'hello img','',3,'2023-06-28 15:08:47'),(12,'',NULL,3,'2023-06-28 15:11:15'),(13,'hellko kir','1687949694164155492.jpg',3,'2023-06-28 16:24:54'),(14,'','1687949764521blank_profile.png',3,'2023-06-28 16:26:04'),(15,'','1687949767818blank_profile.png',3,'2023-06-28 16:26:07'),(16,'hello img','1687949781966blank_profile.png',3,'2023-06-28 16:26:22'),(17,'hello kir new ','1687950241963spiaggia di li cossi,.jpeg',3,'2023-06-28 16:34:02'),(18,'hello let\'s go to.....................','1688114098744155492.jpg',1,'2023-06-30 14:04:58'),(19,'hey dude ............','1688114125526Yuanyang rice terraces_China.jfif',1,'2023-06-30 14:05:25');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,4 +204,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-30 11:06:08
+-- Dump completed on 2023-06-30 14:06:49

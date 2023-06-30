@@ -1,3 +1,12 @@
 
+NR - not resolved 
+ER - error resolved
 
-children component after rendering the 
+
+// children component after rendering the (after clicking the login button it was showing like that )
+
+
+// invalid json format from the auth.context current user................? NR
+
+
+// 

@@ -50,7 +50,7 @@ const Login = () => {
     username: "",
     password: "",
     email: "",
-    name: "",
+    // name: "",
   });
   const [errReg, setErrReg] = useState(null);
   const [mess, setmess] = useState(null);
@@ -83,7 +83,7 @@ const Login = () => {
         username: "",
         password: "",
         email: "",
-        name: "",
+        // name: "",
       });
     },1500); 
   };

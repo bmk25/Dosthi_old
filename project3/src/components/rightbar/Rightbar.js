@@ -28,7 +28,7 @@ const Rightbar = () => {
                 src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
                 alt=""
               />
-              <span>jack sparrow</span>
+              <span>Indra Sena Reddy</span>
             </div>
             <div className="buttons">
               <button>follow</button>
@@ -42,7 +42,7 @@ const Rightbar = () => {
                 src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
                 alt=""
               />
-              <span>jack sparrow</span>
+              <span>praveen</span>
             </div>
             <div className="buttons">
               <button>follow</button>
@@ -57,11 +57,11 @@ const Rightbar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXP4OmvWeUhIghWgXCVClzUVrpfNdaG0jCOFBJgrbZQ9EuEYo_-CCV2zqtQvh9BgcScno&usqp=CAU"
                 alt=""
               />
               <p>
-                <span>jack sparrow</span> changed their cover 
+                <span>jack </span> changed their cover 
               </p>
             </div>
             <span>1 min ago</span>
@@ -70,40 +70,37 @@ const Rightbar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
+ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXP4OmvWeUhIghWgXCVClzUVrpfNdaG0jCOFBJgrbZQ9EuEYo_-CCV2zqtQvh9BgcScno&usqp=CAU"                alt=""
               />
               <p>
-                <span>jack sparrow</span> changed their cover 
+                <span>sandeep</span> liked your pic 
               </p>
             </div>
-            <span>1 min ago</span>
+            <span>3 min ago</span>
           </div>
 
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
+ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXP4OmvWeUhIghWgXCVClzUVrpfNdaG0jCOFBJgrbZQ9EuEYo_-CCV2zqtQvh9BgcScno&usqp=CAU"                alt=""
               />
               <p>
-                <span>jack sparrow</span> changed their cover 
+                <span>Tom Curser</span> send an snap
               </p>
             </div>
-            <span>1 min ago</span>
+            <span>6 min ago</span>
           </div>
 
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
+ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXP4OmvWeUhIghWgXCVClzUVrpfNdaG0jCOFBJgrbZQ9EuEYo_-CCV2zqtQvh9BgcScno&usqp=CAU"                alt=""
               />
               <p>
                 <span>jack sparrow</span> changed their cover 
               </p>
             </div>
-            <span>1 min ago</span>
+            <span>11 min ago</span>
           </div>
 
         </div>
@@ -113,11 +110,10 @@ const Rightbar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
+ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXP4OmvWeUhIghWgXCVClzUVrpfNdaG0jCOFBJgrbZQ9EuEYo_-CCV2zqtQvh9BgcScno&usqp=CAU"                alt=""
               />
               <div className="online" />
-                <span>jack sparrow</span> 
+                <span>sidhu siddhardh roy</span> 
       
             </div>
           </div>
@@ -125,11 +121,10 @@ const Rightbar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
+ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXP4OmvWeUhIghWgXCVClzUVrpfNdaG0jCOFBJgrbZQ9EuEYo_-CCV2zqtQvh9BgcScno&usqp=CAU"                alt=""
               />
               <div className="online" />
-                <span>jack sparrow</span> 
+                <span>stylin rao</span> 
       
             </div>
           </div>
@@ -137,11 +132,10 @@ const Rightbar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
+ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXP4OmvWeUhIghWgXCVClzUVrpfNdaG0jCOFBJgrbZQ9EuEYo_-CCV2zqtQvh9BgcScno&usqp=CAU"                alt=""
               />
               <div className="online" />
-                <span>jack sparrow</span> 
+                <span>Balakrishna</span> 
       
             </div>
           </div>
@@ -149,11 +143,10 @@ const Rightbar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
+ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXP4OmvWeUhIghWgXCVClzUVrpfNdaG0jCOFBJgrbZQ9EuEYo_-CCV2zqtQvh9BgcScno&usqp=CAU"                alt=""
               />
               <div className="online" />
-                <span>jack sparrow</span> 
+                <span>Trump</span> 
       
             </div>
           </div>  

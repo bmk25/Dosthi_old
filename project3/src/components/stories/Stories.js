@@ -10,23 +10,26 @@ const Stories = () => {
   const stories = [
     {
       id: 1,
-      name: "Jack Sparrow ",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: " suma",
+      // img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSchaqpjXxM718T4OBMDkTnZglX5JH1msAnkA",
     },
     {
       id: 2,
-      name: "Jack Sparrow ",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "John snow ",
+     // img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      img: "https://static.vecteezy.com/system/resources/previews/001/312/781/original/statue-of-liberty-usa-free-photo.jpeg",
     },
     {
       id: 3,
-      name: "jack sparrow",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "Yogee",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvES7MAGazvcFwPdnYtytvUmYcET6ovF8oCg&usqp=CAU",
+      
     },
     {
       id: 4,
-      name: "Jack Sparrow ",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "Mamatha",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvES7MAGazvcFwPdnYtytvUmYcET6ovF8oCg&usqp=CAU",
     },
   ];
 

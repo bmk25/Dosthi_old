@@ -1,12 +1,36 @@
 
 NR - not resolved 
 ER - error resolved
+SOl- solution 
+BG - BUG  
+
+--------------------------------------------------------------------------------------
+
+//  -BG-1..  children component after rendering the (after clicking the login button it was showing like that) ....?
 
 
-// children component after rendering the (after clicking the login button it was showing like that )
+
+    -SOL-->   NR
 
 
-// invalid json format from the auth.context current user................? NR
+
+-----------------------------------------------------------------------------------------------------
 
 
-// jksdkjasdgkjhadsjjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+//  -BG-2..  invalid json format from the auth.context current user................? 
+
+
+    SOL-->   NR
+-----------------------------------------------------------------------------------------------------------
+
+
+//-BG-3.. node:events:491
+            throw er; // Unhandled 'error' event
+            ^
+            Error: listen EADDRINUSE: address already in use :::8800 at Server.setupListenHandle [as _listen2].......?
+
+
+    SOl --> another server running on the other side 
+
+
+-------------------------------------------------------------------------------------------------

@@ -1,22 +1,102 @@
-import React, {  useState } from 'react';
-import { useContext } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faLock, faEnvelope, } from '@fortawesome/free-solid-svg-icons';
-// import { faGoogle, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import './login.scss';
-import Dosthi from '../../assets/dosthi.svg';
+// about this page 
+// after registering the user it will be redirect to the register page only ......................
+
+
+
+import React, { useContext, useState } from "react";
+// import { Link } from "react-router-dom";
+import "./login.scss";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
-import axios from 'axios';
-import React, { useState  } from 'react';
+import Dosthi  from '../../assets/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock, faEnvelope, } from '@fortawesome/free-solid-svg-icons';
 // import { faGoogle, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import './Login.css';
-import Dosthi from '../images/2.png';
 
-function LoginPage() {
-    const [isSignUpMode, setIsSignUpMode] = useState(false);
+const Login = () => {
+
+
+  const [inputsLog, setInputsLog]  =useState({
+    username : "",
+    password : ""
+  })
+
+  const [errLog,setErrLog] = useState(null)
+
+  const navigate = useNavigate()
+
+  const handleChangeLog = (e) =>{
+    e.preventDefault()
+    setInputsLog(prev =>({...prev,[e.target.name]:e.target.value}))
+  }
+
+  const {login} = useContext(AuthContext)
+
+
+  const handleLogin = async e => {
+    e.preventDefault()
+    try{
+      await login(inputsLog);
+      navigate("/")
+
+    }catch (err){
+      setErrLog(err.response.data)
+      console.log(err);
+    }
+  };
+
+  console.log(inputsLog)
+
+
+  //register 
+
+  const [inputsReg, setInputsReg] = useState({
+    username: "",
+    password: "",
+    email: "",
+    name: "",
+  });
+  const [errReg, setErrReg] = useState(null);
+  const [mess, setmess] = useState(null);
+
+  const handleChangeReg = (e) => {
+    setInputsReg((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+    console.log()
+  const handleReg = async (e) => {
+    e.preventDefault(); // Prevent the default form submission
+
+
+    try {
+      const res = await axios.post(
+        "http://localhost:8800/api/auth/register",
+        inputsReg
+      );
+      console.log(res.data);
+      setmess(res.data);
+    } catch (err) {
+      setErrReg(err.response.data);
+      console.log(err.response.data);
+    }
+    setTimeout(() => {
+      setmess(null);
+    }, 1000); 
+
+    setTimeout(() => {
+      setInputsReg({
+        username: "",
+        password: "",
+        email: "",
+        name: "",
+      });
+    },1500); 
+  };
+
+  // page style
+
+  const [isSignUpMode, setIsSignUpMode] = useState(false);
     
     const handleSignUpClick = () => {
         setIsSignUpMode(true);
@@ -26,35 +106,34 @@ function LoginPage() {
         setIsSignUpMode(false);
     };
 
-    
 
-  
-
-    return (
-        <div className={`loginContainer ${isSignUpMode ? 'sign-up-mode' : ''}`}>
+  return (
+    <div className={`loginContainer ${isSignUpMode ? 'sign-up-mode' : ''}`}>
             <div className="forms-container">
                 <div className="signin-signup">
-                    <form action="#" className="sign-in-form loginForm">
+                    <form  className="sign-in-form loginForm">
                         <h2 className="title">LOGIN</h2>
                         <div className="input-field">
                             <FontAwesomeIcon icon={faUser} className="my-auto mx-auto" />
-                            <input className="LoginInput" type="text" placeholder="Username or E-Mail" required />
+                            <input className="LoginInput" type="text" placeholder="Username" name="username" onChange={handleChangeLog}  required />
                         </div>
                         <div className="input-field">
                             <FontAwesomeIcon icon={faLock} className="my-auto mx-auto" />
-                            <input className="LoginInput" type='password' placeholder="Password" required />
+                            <input className="LoginInput" type='password' placeholder="Password" name="password" onChange={handleChangeLog}  required />
                         </div>
-                        <button className="btn">LOGIN</button>
+                        {errLog && errLog}
+                        <button className="btn" onClick={handleLogin}>LOGIN</button>
                     </form>
-                    <form action="#" className="sign-up-form loginForm">
+
+                    <form  className="sign-up-form loginForm">
                         <h2 className="title">REGISTER</h2>
                         <div className="input-field">
                             <FontAwesomeIcon icon={faUser} className="my-auto mx-auto" />
-                            <input className="LoginInput" type="text" placeholder="Username" required  />
+                            <input className="LoginInput" type="text" placeholder="Username" name="username"   value={inputsReg.username}  onChange={handleChangeReg} required  />
                         </div>
                         <div className="input-field">
                             <FontAwesomeIcon icon={faEnvelope} className="my-auto mx-auto" />
-                            <input className="LoginInput"  type="email" placeholder="Email" required  />
+                            <input className="LoginInput"  type="email" placeholder="Email" name="email"   value={inputsReg.email} onChange={handleChangeReg}   required  />
                         </div>
                         <div className="input-field">
                             <FontAwesomeIcon icon={faLock} className="my-auto mx-auto"/>
@@ -63,13 +142,20 @@ function LoginPage() {
                                 type='password'
                                 placeholder="Password"
                                 id="psw"
-                                name="psw"
+                                name="password"
+                                value={inputsReg.password}
+                                onChange={handleChangeReg}
                                 required
                                
                             />
                         </div>
-                        
-                        <button className="btn" type="submit">REGISTER</button>
+                        <div className="input-field">
+                            <FontAwesomeIcon icon={faEnvelope} className="my-auto mx-auto" />
+                            <input className="LoginInput"  type="text" placeholder="name" name="name" value={inputsReg.name} onChange={handleChangeReg}   required  />
+                        </div>
+                        {errReg && errReg}
+                        {mess && mess}
+                        <button className="btn" onClick={handleReg} >REGISTER</button>
                     </form>
                 </div>
             </div>
@@ -77,9 +163,11 @@ function LoginPage() {
                 <div className="panel left-panel">
                     <div className="content">
                         <h3>New here?</h3>
+                        <br /><br />
                         <p>
                             Create an account and start exploring the platform.
                         </p>
+                        <br /><br />
                         <button className="btn transparent" onClick={handleSignUpClick}>
                             REGISTER
                         </button>
@@ -89,9 +177,12 @@ function LoginPage() {
                 <div className="panel right-panel">
                     <div className="content">
                         <h3>One of us?</h3>
+                        <br /><br />
                         <p>
                             If you already have an account, please log in.
                         </p>
+                        
+                        <br /><br />
                         <button className="btn transparent" onClick={handleSignInClick}>
                             LOGIN
                         </button>
@@ -101,6 +192,9 @@ function LoginPage() {
             </div>
         </div>
     );
-}
+  }
+export default Login;
 
-export default LoginPage;
+
+
+

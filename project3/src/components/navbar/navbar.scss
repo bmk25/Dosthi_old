@@ -19,16 +19,40 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      img{
-        width: 60px;
-        height: 30px;
-        // border-radius: ;
-        // object-fit: cover;
-        align-items: center;
-        gap: 10px;
-        font-weight: 700;
-        zoom: 200%;
+      // img{
+      //   width: 60px;
+      //   height: 30px;
+      //   // border-radius: ;
+      //   // object-fit: cover;
+      //   align-items: center;
+      //   gap: 10px;
+      //   font-weight: 700;
+      //   zoom: 200%;
 
+      // }
+      .waviy {
+        position: relative;
+
+      }
+
+      .waviy span {
+        position: relative;
+        display: inline-block;
+        font-size: 1.6rem;
+        color: var(--text-color-lite-purple);
+        text-transform: uppercase;
+        animation: flip 2s infinite;
+        animation-delay: calc(.2s * var(--i));
+        font-weight: 600;
+        font-family: 'Times New Roman', Times, serif;
+      }
+
+      @keyframes flip {
+
+        0%,
+        80% {
+          transform: rotateY(360deg)
+        }
       }
 
       span {

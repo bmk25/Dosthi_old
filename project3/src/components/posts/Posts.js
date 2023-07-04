@@ -18,7 +18,7 @@ const Posts = () => {
         ? "loading"
         : data.map((post) => <Post post={post} key={post.id} />)}
     </div>
-  );
-};
+  )
+}
 
 export default Posts;

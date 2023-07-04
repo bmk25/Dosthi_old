@@ -55,5 +55,5 @@ app.use("/api/posts",postRoute)
 
 
 app.listen(8800,(req,res)=>{
-    console.log('hello from lama dev ')
+    console.log('hello server .....................')
 })

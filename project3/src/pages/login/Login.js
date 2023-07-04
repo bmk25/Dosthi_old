@@ -4,7 +4,7 @@ import "./login.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
-import Dosthi  from '../../assets/dosthi.svg'
+import Dosthi  from '../../assets/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock, faEnvelope, } from '@fortawesome/free-solid-svg-icons';
 // import { faGoogle, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
@@ -50,7 +50,7 @@ const Login = () => {
     username: "",
     password: "",
     email: "",
-    // name: "",
+    name: "",
   });
   const [errReg, setErrReg] = useState(null);
   const [mess, setmess] = useState(null);
@@ -59,6 +59,7 @@ const Login = () => {
     setInputsReg((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+    console.log()
   const handleReg = async (e) => {
     // e.preventDefault(); // Prevent the default form submission
 
@@ -78,14 +79,14 @@ const Login = () => {
       setmess(null);
     }, 1000); 
 
-    setTimeout(() => {
-      setInputsReg({
-        username: "",
-        password: "",
-        email: "",
-        // name: "",
-      });
-    },1500); 
+    // setTimeout(() => {
+    //   setInputsReg({
+    //     username: "",
+    //     password: "",
+    //     email: "",
+    //     name: "",
+    //   });
+    // },1500); 
   };
 
   // page style
@@ -123,11 +124,11 @@ const Login = () => {
                         <h2 className="title">REGISTER</h2>
                         <div className="input-field">
                             <FontAwesomeIcon icon={faUser} className="my-auto mx-auto" />
-                            <input className="LoginInput" type="text" placeholder="Username" name="username"   value={inputsReg.username}  onChange={handleChangeReg} required  />
+                            <input className="LoginInput" type="text" placeholder="Username" name="username"   onChange={handleChangeReg} required  />
                         </div>
                         <div className="input-field">
                             <FontAwesomeIcon icon={faEnvelope} className="my-auto mx-auto" />
-                            <input className="LoginInput"  type="email" placeholder="Email" name="email"   value={inputsReg.email} onChange={handleChangeReg}   required  />
+                            <input className="LoginInput"  type="email" placeholder="Email" name="email"    onChange={handleChangeReg}   required  />
                         </div>
                         <div className="input-field">
                             <FontAwesomeIcon icon={faLock} className="my-auto mx-auto"/>
@@ -137,11 +138,14 @@ const Login = () => {
                                 placeholder="Password"
                                 id="psw"
                                 name="password"
-                                value={inputsReg.password}
                                 onChange={handleChangeReg}
                                 required
                                
                             />
+                        </div>
+                        <div className="input-field">
+                            <FontAwesomeIcon icon={faEnvelope} className="my-auto mx-auto" />
+                            <input className="LoginInput"  type="text" placeholder="name" name="name" onChange={handleChangeReg}   required  />
                         </div>
                         {errReg && errReg}
                         {mess && mess}

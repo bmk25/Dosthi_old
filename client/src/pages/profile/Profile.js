@@ -9,18 +9,68 @@ import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Posts from "../../components/posts/Posts"
+import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
+import { makeRequest } from "../../axios";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
+import { useLocation } from "react-router-dom";
 
 const Profile = () => {
+
+
+  const userId = parseInt(useLocation().pathname.split("/")[2])
+
+  // localhost:3000/profile/2
+  //-             0/      1/2
+  // we need to split at 2nd position 
+  
+  const { isLoading, error, data } = useQuery(["user"], () =>
+    makeRequest.get("/users/find/" + userId).then((res) => {
+      return res.data;
+    })
+  );
+    // console.log(data)
+  const { currentUser } = useContext(AuthContext);
+
+  // const { isLoading: rIsLoading, data: relationshipData } = useQuery(
+  //   ["relationship"],
+  //   () =>
+  //     makeRequest.get("/relationships?followedUserId=" + userId).then((res) => {
+  //       return res.data;
+  //     })
+  // );
+
+  // const queryClient = useQueryClient();
+
+  // const mutation = useMutation(
+  //   (following) => {
+  //     if (following)
+  //       return makeRequest.delete("/relationships?userId=" + userId);
+  //     return makeRequest.post("/relationships", { userId });
+  //   },
+  //   {
+  //     onSuccess: () => {
+  //       // Invalidate and refetch
+  //       queryClient.invalidateQueries(["relationship"]);
+  //     },
+  //   }
+  // );
+  // const handleFollow = () => {
+  //   mutation.mutate(relationshipData.includes(currentUser.id));
+  // };
+
   return (
     <div className="profile">
+      {isLoading ? "loading "
+      :<>
       <div className="images">
         <img
-          src="https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt=""
+          src={data.coverPic}
+          alt="null"
           className="cover"
         />
         <img
-          src="https://images.pexels.com/photos/14028501/pexels-photo-14028501.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          src={data.profilePic}
           alt=""
           className="profilePic"
         />
@@ -45,27 +95,33 @@ const Profile = () => {
             </a>
           </div>
           <div className="center">
-            <span>Sparrow</span>
+            <span>{data.name}</span>
             <div className="info">
               <div className="item">
                 <PlaceIcon />
-                <span>India</span>
+                <span>{data.city}</span>
               </div>
               <div className="item">
                 <LanguageIcon />
-                <span>satelite.dev</span>
+                <span>{data.website}</span>
               </div>
             </div>
-            <button>follow</button>
+            { userId === currentUser.id? 
+            (<button> Update </button>) : <button>follow</button>
+              }
           </div>
           <div className="right">
             <EmailOutlinedIcon />
             <MoreVertIcon />
           </div>
         </div>
-      <Posts/>
+      {/* <Posts/> */}
       </div>
+
+      </>
+    }
     </div>
+ 
   );
 };
 

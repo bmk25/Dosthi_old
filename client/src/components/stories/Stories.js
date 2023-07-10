@@ -32,6 +32,40 @@ const Stories = () => {
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvES7MAGazvcFwPdnYtytvUmYcET6ovF8oCg&usqp=CAU",
     },
   ];
+  // const [file, setFile] = useState(null);
+
+
+  // const upload = async () => {
+  //   try {
+  //     const formData = new FormData();
+  //     formData.append("file", file);
+  //     const res = await makeRequest.post("/upload", formData);
+  //     return res.data;
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+  // const queryClient = useQueryClient();
+
+  // const mutation = useMutation(
+  //   (newPost) => {
+  //     return makeRequest.post("/stories", newPost);
+  //   },
+  //   {
+  //     onSuccess: () => {
+  //       // Invalidate and refetch
+  //       queryClient.invalidateQueries(["stories"]);
+  //     },
+  //   }
+  // );
+
+  // const handleClick = async (e) => {
+  //   e.preventDefault();
+  //   let imgUrl = "";
+  //   if (file) imgUrl = await upload();
+  //   mutation.mutate({ img: imgUrl });
+  //   setFile(null);
+  // };
 
   return (
     <div className="stories">
@@ -40,7 +74,7 @@ const Stories = () => {
         <div className="story">
             <img src={currentUser.profilePic} alt="" />
             <span>{currentUser.name}</span>
-            <button>+</button>
+            <button >+</button>
           </div>
         {stories.map(story=>(
           <div className="story" key={story.id}>

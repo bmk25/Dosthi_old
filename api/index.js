@@ -4,8 +4,8 @@ const app =express()
 import authRoute from './routes/auth.js'
 import userRoute from './routes/users.js'
 import postRoute from './routes/posts.js'
-// import commentRoute from './routes/comments.js'
-// import likeRoute from './routes/likes.js'
+import commentRoute from './routes/comments.js'
+import likeRoute from './routes/likes.js'
 import cors from 'cors'
 import cookieParser from "cookie-parser";
 import multer from 'multer'
@@ -28,7 +28,7 @@ app.use(cookieParser())
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, '../project3/public/upload')
+      cb(null, '../client/public/upload')
     },
     filename: function (req, file, cb) {
      
@@ -48,8 +48,8 @@ const storage = multer.diskStorage({
 app.use("/api/auth",authRoute)
 app.use("/api/users",userRoute)
 app.use("/api/posts",postRoute)
-// app.use("/api/comments",commentRoute)
-// app.use("/api/likes",likeRoute)
+app.use("/api/comments",commentRoute)
+app.use("/api/likes",likeRoute)
 
 
 

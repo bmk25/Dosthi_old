@@ -48,7 +48,8 @@ const Navbar = () => {
           <span style={{ "--i": 6 }}>I</span>
         </div>
 
-        <HomeOutlinedIcon />
+        <Link to="/">
+        <HomeOutlinedIcon /></Link>
         {darkMode ? (
           <WbSunnyOutlinedIcon onClick={toggle} />
         ) : (
@@ -60,7 +61,7 @@ const Navbar = () => {
           <input type="text" placeholder="search..." />
           <button type="submit">
             <SearchOutlinedIcon className="search-icon" />
-            <i class="bx bx-search search-icon"></i>
+            <i className="bx bx-search search-icon"></i>
           </button>
         </div>
       </div>

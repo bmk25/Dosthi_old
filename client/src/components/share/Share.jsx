@@ -1,7 +1,10 @@
 import "./share.scss";
 import Image from "../../assets/img.png";
 import Map from "../../assets/map.png";
-import Friend from "../../assets/friend.png";
+// import Friend from "../../assets/friend.png";
+// import Friend from ""
+// import Friend from "/public/assets/friend.png"
+import Friend from '../../assets/friend.png'
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -9,7 +12,9 @@ import { makeRequest } from "../../axios";
 const Share = () => {
   const [file, setFile] = useState(null);
   const [desc, setDesc] = useState("");
- 
+
+  // ln -s ../public/images src/assets
+
   const upload = async () => {
     try {
       const formData = new FormData();
@@ -29,7 +34,7 @@ const Share = () => {
     (newPost) => {
       return makeRequest.post("/posts", newPost);
     },
-    { 
+    {
       onSuccess: () => {
         // Invalidate and refetch
         queryClient.invalidateQueries(["posts"]);
@@ -44,7 +49,7 @@ const Share = () => {
     mutation.mutate({ desc, img: imgUrl });
     setDesc("");
     setFile(null);
-  }; 
+  };
 
   return (
     <div className="share">
@@ -59,11 +64,11 @@ const Share = () => {
               value={desc}
             />
           </div>
-          <div className="right">
+          {/* <div className="right">
             {file && (
               <img className="file" alt="" src={URL.createObjectURL(file)} />
             )}
-          </div>
+          </div> */}
         </div>
         <hr />
         <div className="bottom">
@@ -73,7 +78,7 @@ const Share = () => {
               id="file"
               style={{ display: "none" }}
               onChange={(e) => setFile(e.target.files[0])}
-              
+
             />
             <label htmlFor="file">
               <div className="item">
@@ -100,3 +105,4 @@ const Share = () => {
 };
 
 export default Share;
+

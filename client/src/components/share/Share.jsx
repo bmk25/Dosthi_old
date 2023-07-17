@@ -1,10 +1,7 @@
 import "./share.scss";
 import Image from "../../assets/img.png";
-import Map from "../../assets/map.png";
+// import Map from "../../assets/map.png";
 // import Friend from "../../assets/friend.png";
-// import Friend from ""
-// import Friend from "/public/assets/friend.png"
-import Friend from '../../assets/friend.png'
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -12,8 +9,6 @@ import { makeRequest } from "../../axios";
 const Share = () => {
   const [file, setFile] = useState(null);
   const [desc, setDesc] = useState("");
-
-  // ln -s ../public/images src/assets
 
   const upload = async () => {
     try {
@@ -59,16 +54,16 @@ const Share = () => {
             <img src={"/upload/" + currentUser.profilePic} alt="" />
             <input
               type="text"
-              placeholder={`open up your mind post it ${currentUser.username} ?`}
+              placeholder={`What's on your mind ${currentUser.name}?`}
               onChange={(e) => setDesc(e.target.value)}
               value={desc}
             />
           </div>
-          {/* <div className="right">
+          <div className="right">
             {file && (
               <img className="file" alt="" src={URL.createObjectURL(file)} />
             )}
-          </div> */}
+          </div>
         </div>
         <hr />
         <div className="bottom">
@@ -78,7 +73,6 @@ const Share = () => {
               id="file"
               style={{ display: "none" }}
               onChange={(e) => setFile(e.target.files[0])}
-
             />
             <label htmlFor="file">
               <div className="item">
@@ -86,14 +80,14 @@ const Share = () => {
                 <span>Add Image</span>
               </div>
             </label>
-            <div className="item">
+            {/* <div className="item">
               <img src={Map} alt="" />
               <span>Add Place</span>
             </div>
             <div className="item">
               <img src={Friend} alt="" />
               <span>Tag Friends</span>
-            </div>
+            </div> */}
           </div>
           <div className="right">
             <button onClick={handleClick}>Share</button>
@@ -105,4 +99,3 @@ const Share = () => {
 };
 
 export default Share;
-

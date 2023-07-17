@@ -233,7 +233,7 @@ const Login = () => {
     }
   };
 
-  console.log(inputsLog)
+  // console.log(inputsLog)
 
 
   //register 

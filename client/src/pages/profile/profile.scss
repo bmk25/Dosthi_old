@@ -3,6 +3,19 @@
 .profile {
   @include themify($themes) {
     background-color: themed("bgSoft");
+    // display: flex;
+    // flex:5;
+    position: sticky;
+    overflow: scroll;
+    top: 30px;
+    height: calc(100vh - 50px); 
+
+    
+    &::-webkit-scrollbar{// for disable the scroll bar
+      display: none;
+    }
+
+    
 
     .images {
       width: 100%;
@@ -16,8 +29,8 @@
       }
 
       .profilePic {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
         object-fit: cover;
         position: absolute;

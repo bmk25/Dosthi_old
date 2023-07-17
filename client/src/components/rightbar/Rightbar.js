@@ -159,6 +159,9 @@
 // };
 
 // export default Rightbar;
+
+
+//----------now
 import React from "react";
 import "./rightbar.scss";
 import snake from '../../assets/1.png';
@@ -171,7 +174,7 @@ const Rightbar = () => {
   return (
     <div className="rightbar">
       <div className="container">
-        <div className="item">
+        {/* <div className="item">
           <p className="heading">Follow Requests </p>
 
           <div className="user">
@@ -215,8 +218,9 @@ const Rightbar = () => {
               <button className="btn btn1--primary">dismiss</button>
             </div>
           </div>
-        </div>
+        </div> */}
           {/* item 2 */}
+{/*           
         <div className="activities">
           <span>Latest Activities</span>
 
@@ -315,8 +319,8 @@ const Rightbar = () => {
                 <span>Trump</span> 
       
             </div>
-          </div>  
-        </div>
+          </div>   */}
+        {/* </div> */}
         <div className="games">
           <p>Games</p>
           <div className="game">

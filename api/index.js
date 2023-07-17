@@ -9,6 +9,8 @@ import likeRoute from './routes/likes.js'
 import cors from 'cors'
 import cookieParser from "cookie-parser";
 import multer from 'multer'
+import relationshipRoute from './routes/relationships.js'
+import storyRoute from './routes/stories.js'
 
 
 app.use((req,res,next) =>{
@@ -50,6 +52,9 @@ app.use("/api/users",userRoute)
 app.use("/api/posts",postRoute)
 app.use("/api/comments",commentRoute)
 app.use("/api/likes",likeRoute)
+app.use("/api/relationships",relationshipRoute)
+// app.use("/api/stories",storyRoute)
+
 
 
 

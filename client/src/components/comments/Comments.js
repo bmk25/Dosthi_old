@@ -14,7 +14,17 @@ const Comments = ({ postId }) => {
       return res.data;
     })
   );
-  
+  console.log(data)
+
+  const userId = currentUser.id
+  const { isLoading:userLoading, data :userData } = useQuery(["user"], () =>
+  makeRequest.get("/users/find/" + userId).then((res) => {
+    return res.userData;
+  })
+);
+  console.log(userData)
+  // console.log(data.length)
+
   const queryClient = useQueryClient();
 
   const mutation = useMutation(
@@ -42,7 +52,7 @@ const Comments = ({ postId }) => {
   return (
     <div className="comments">
       <div className="write">
-        <img src={currentUser.profilePic} alt="" />
+        <img src={"/upload/"+currentUser.profilePic}alt="" />
         <input type="text" 
               placeholder="write a comment" 
               value={desc}
@@ -55,7 +65,7 @@ const Comments = ({ postId }) => {
         ? "loading"
         : data.map((comment) => (
             <div className="comment">
-              <img src={comment.profilePicture} alt="" />
+              <img src={"/upload/"+comment.profilePic} alt="" />
               <div className="info">
                 <span>{comment.name}</span>
                 <p>{comment.desc}</p>

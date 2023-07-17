@@ -1,5 +1,21 @@
-how to uplalodfhasdkjfhasdjfhkjashfkj
-jkasdhfajksfkjasdhjkfhaskjdfkjadshfkjahskfjhadskjfhakdsjghksdjghkjhgkncvx,zvzhxcjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjdsGGFDGxf
 
-dffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+// ! logical not operator
+
+let isTrue = true;
+let isFalse = false;
+
+console.log(!isTrue);  // Output: false
+console.log(!isFalse); // Output: true
+
+---------------------------------------------------------------------------------------------------------------
+
+// && logical and -> Conditional rendering using the && operator in JavaScript and JSX 
+
+{condition && <ElementOrComponent />}
+
+    If condition is true, the expression after && (<ElementOrComponent />) will be evaluated and rendered. However, if condition is false (or falsy), the expression is short-circuited, and nothing will be rendered.
+
+ Ex: {isLoggedIn && <button onClick={logout}>Logout</button>}
+
+    In this case, if isLoggedIn is true, the button element will be rendered. Otherwise, if isLoggedIn is false, the button element will not be included in the rendered output.
+
